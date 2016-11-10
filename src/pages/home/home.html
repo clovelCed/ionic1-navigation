@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Webaxx</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let contact of contacts" (click) = "open(contact)">
+    <ion-item>
+      <ion-avatar item-left>
+        <img [src]="contact.photo">
+      </ion-avatar>
+      <h2>{{contact.name}}</h2>
+      <p>{{contact.mail}}</p>
+    </ion-item>
+  </ion-card>
+</ion-content>

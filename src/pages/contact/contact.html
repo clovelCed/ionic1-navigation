@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Contact
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+
+  <ion-item>
+    <ion-avatar item-left>
+      <img [src]="selectedContact.photo">
+    </ion-avatar>
+    <h2>{{selectedContact.name}}</h2>
+    <p>{{selectedContact.mail}}</p>
+  </ion-item>
+
+  <img [src]="selectedContact.splash">
+
+</ion-card>
+</ion-content>
