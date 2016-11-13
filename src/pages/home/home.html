@@ -1,17 +1,36 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Webaxx</ion-title>
-  </ion-navbar>
+<ion-navbar color="bluelight">
+  <ion-title>Webaxx</ion-title>
+</ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-card *ngFor="let contact of contacts" (click) = "open(contact)">
+<ion-content style="background:#eeeeee;" padding>
+
+  <ion-card *ngFor="let champion of champions">
     <ion-item>
+
       <ion-avatar item-left>
-        <img [src]="contact.photo">
+        <img [src]="champion.photo">
       </ion-avatar>
-      <h2>{{contact.name}}</h2>
-      <p>{{contact.mail}}</p>
+      <ion-grid>
+        <ion-row>
+          <ion-col width-50>
+            <h2>{{champion.name}}</h2>
+            <p>{{champion.mail}}</p>
+          </ion-col>
+          <ion-col width-25>
+            <button ion-button outline (click) = "open(champion, champion.splash1)">
+              1
+            </button>
+          </ion-col>
+          <ion-col width-25>
+            <button ion-button outline [navPush]="detailPage" [navParams]="createParams(champion)">
+              2
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
     </ion-item>
   </ion-card>
 </ion-content>
